@@ -5,7 +5,7 @@ services:
   db:
     image: postgres
     volumes:
-      - postgres-data:/var/lib/postgresqul/data
+      - postgres-data:/var/lib/postgresql/data
   app:
     build:
       context: .
