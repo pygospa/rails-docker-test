@@ -1,3 +1,8 @@
+# Travis-CI Test
+
+[![Build Status](https://travis-ci.org/pygospa/rails-docker-test.svg?branch=master)](https://travis-ci.org/pygospa/rails-docker-test)
+
+
 # Setup a dockerised RAILS environment with no local Ruby/Rails installed
 
 ## Steps to reproduce setup
