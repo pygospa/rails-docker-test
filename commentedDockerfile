@@ -1,0 +1,20 @@
+# Pull ruby+node image from docker hub
+FROM starefossen/ruby-node:2-8-stretch
+
+# Update libraries within image
+RUN apt-get update -qq && \
+# install editor, build tools and postgres library
+    apt-get install -y vim build-essential libpq-dev && \
+# Install bundler
+    gem install bundler
+# Create a folder for your project
+RUN mkdir /project
+# Copy Gemfile/Gemfile.lock from host to app folder
+COPY Gemfile Gemfile.lock /project/
+# Set the working directory to the app folder
+WORKDIR /project
+# run bundle install inside the container app folder
+RUN bundle install
+# Copy the rest of the content from your host folder to the container app folder
+COPY . /project
+
