@@ -39,6 +39,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Watch for file changes
+  gem 'guard', '~>2.14.2',require:false
+  # Run tests when test files or corresponding app files change
+  gem 'guard-minitest', '~>2.4.6', require: false
+  # Autorefresh page when .css, .js. or .erb files change
+  gem 'guard-livereload','~>2.5.2', require: false
+  # enable livereload from middleware
+  gem 'rack-livereload'
+  # run multiple commands / allows us to run both rails and guard from docker in
+  # one command
+  gem 'foreman'
 end
 
 group :development do
