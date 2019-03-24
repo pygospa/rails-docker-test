@@ -24,5 +24,5 @@
 1. Modify `config/database.yml` to use database
 1. Run `docker-compose down && docker-compose up --build` because after creating
    Rails app the `Gemfile` was overwritten
-1. Create DB from Rails vai `docker-compose exec app rails db:create`
+1. Create DB from Rails vai `docker-compose run app rails db:create`
 
